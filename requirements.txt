@@ -1,0 +1,13 @@
+flask
+crewai[tools]
+langchain
+langchain-community
+langchain-huggingface
+langchain-text-splitters
+langchain-groq
+pinecone
+sentence-transformers
+pypdf
+werkzeug
+python-dotenv
+pydantic>=2.11.9,<2.13

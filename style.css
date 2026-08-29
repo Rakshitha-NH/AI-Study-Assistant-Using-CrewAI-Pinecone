@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+    --primary: #4F46E5;
+    --primary-hover: #4338CA;
+    --bg-color: #F3F4F6;
+    --card-bg: #FFFFFF;
+    --text-main: #1F2937;
+    --text-muted: #6B7280;
+    --user-msg: #E0E7FF;
+    --ai-msg: #F3F4F6;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: var(--text-main);
+    margin: 0; padding: 0; min-height: 100vh;
+    display: flex; justify-content: center; align-items: center;
+}
+
+.app-container {
+    width: 100%; max-width: 900px; margin: 40px 20px;
+    background: var(--card-bg); border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden; display: flex; flex-direction: column;
+}
+
+.header {
+    background: linear-gradient(135deg, var(--primary) 0%, #7C3AED 100%);
+    color: white; padding: 25px 30px; text-align: center;
+}
+
+.header h1 { margin: 0; font-size: 24px; font-weight: 600; }
+.header p { margin: 5px 0 0 0; font-size: 14px; opacity: 0.8; }
+
+.content-wrapper { padding: 30px; display: flex; flex-direction: column; gap: 25px; }
+
+.upload-section {
+    background: #F9FAFB; border: 2px dashed #D1D5DB;
+    border-radius: 12px; padding: 20px; text-align: center; transition: 0.3s ease;
+}
+.upload-section:hover { border-color: var(--primary); background: #F3F4F6; }
+
+input[type="file"] { display: none; }
+
+.custom-file-upload {
+    display: inline-block; padding: 10px 20px; cursor: pointer;
+    background: white; border: 1px solid #D1D5DB; border-radius: 8px;
+    font-size: 14px; font-weight: 500; color: var(--text-main); transition: 0.2s; margin-right: 10px;
+}
+.custom-file-upload:hover { border-color: var(--primary); color: var(--primary); }
+
+button {
+    background: var(--primary); color: white; border: none;
+    padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 500;
+    cursor: pointer; transition: 0.3s ease; box-shadow: 0 4px 6px rgba(79, 70, 229, 0.2);
+}
+button:hover { background: var(--primary-hover); transform: translateY(-1px); }
+
+#upload-status { margin-top: 15px; font-size: 14px; font-weight: 500; }
+
+.chat-box {
+    height: 450px; overflow-y: auto; border: 1px solid #E5E7EB;
+    padding: 20px; background: #ffffff; border-radius: 12px;
+    display: flex; flex-direction: column; gap: 15px;
+}
+.chat-box::-webkit-scrollbar { width: 6px; }
+.chat-box::-webkit-scrollbar-track { background: transparent; }
+.chat-box::-webkit-scrollbar-thumb { background: #D1D5DB; border-radius: 10px; }
+
+.message {
+    max-width: 80%; padding: 15px 20px; border-radius: 16px;
+    font-size: 15px; line-height: 1.5; animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.user-msg { align-self: flex-end; background: var(--user-msg); color: #3730A3; border-bottom-right-radius: 4px; }
+.ai-msg { align-self: flex-start; background: var(--ai-msg); color: var(--text-main); border-bottom-left-radius: 4px; }
+.sys-msg { align-self: center; background: transparent; color: var(--text-muted); font-size: 13px; font-style: italic; padding: 5px; }
+.error-msg { align-self: center; background: #FEE2E2; color: #991B1B; }
+
+.copy-btn {
+    background: none; border: 1px solid #D1D5DB; color: var(--text-muted);
+    padding: 4px 8px; font-size: 12px; border-radius: 6px; cursor: pointer;
+    float: right; margin-top: -5px; transition: 0.2s; box-shadow: none;
+}
+.copy-btn:hover { background: #F3F4F6; color: var(--primary); border-color: var(--primary); }
+
+.input-area { display: flex; gap: 10px; margin-top: 15px; }
+.input-area input { flex: 1; padding: 15px 20px; font-size: 15px; border: 1px solid #D1D5DB; border-radius: 10px; font-family: inherit; outline: none; }
+.input-area input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1); }
+
+#mic-btn { background: #F3F4F6; color: var(--text-main); font-size: 18px; padding: 0 20px; border: 1px solid #D1D5DB; box-shadow: none; }
+.mic-active { background: #EF4444 !important; color: white !important; border-color: #EF4444 !important; }
